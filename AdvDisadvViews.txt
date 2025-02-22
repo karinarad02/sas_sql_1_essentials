@@ -1,0 +1,13 @@
+For your own SAS programs, you might be wondering when to use PROC SQL views instead of tables. To make this decision, it's important to understand the advantages and disadvantages of using PROC SQL views. PROC SQL views offer many advantages. By using PROC SQL views you can do the following:
+
+avoid storing copies of large tables
+avoid a frequent refresh of table copies; when the underlying data changes, a view surfaces the most current data
+combine data from multiple database tables and multiple libraries or databases
+simplify complex queries
+prevent other users from inadvertently altering the query code
+prevent other users from viewing data they shouldn't be able to see
+Using PROC SQL views also has disadvantages:
+
+Views might produce different results each time they are accessed if the data in the underlying data sources changes.
+Views can require significant resources each time that they execute. With a view, you save disk storage space at the cost of extra CPU and memory usage.
+
