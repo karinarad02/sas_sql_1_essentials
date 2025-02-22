@@ -1,0 +1,7 @@
+It's important to understand the different types of table relationships.
+
+In a one-to-one relationship, a single observation in one table is related to exactly one observation in another table based on the values of one or more selected variables.
+In a one-to-many relationship, a single observation in one table is related to more than one observation in another table based on the values of one or more selected variables.
+A many-to-many relationship occurs when multiple records in a table are associated with multiple records in another table.
+And in a nonmatching relationship, at least one observation in one table is unrelated to any observation in another table based on the values of one or more selected variables.
+ 

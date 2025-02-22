@@ -1,0 +1,13 @@
+Here's the code from the previous Activity:
+
+select CustomerID
+    from sq.saleslist
+except
+select CustomerID
+    from sq.salesphone;
+You can use subqueries to produce identical results. This example uses a subquery to return all CustomerIDs in the salesphone table. The WHERE clause subsets for all CustomerIDs in the saleslist table that are not in the list returned by the subquery. The DISTINCT keyword removes any duplicate rows, resulting in the same result as the EXCEPT set operator.
+
+select distinct CustomerID
+    from sq.saleslist
+    where CustomerID not in(select CustomerID
+	                       from sq.salesphone);

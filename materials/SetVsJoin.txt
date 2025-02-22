@@ -1,0 +1,17 @@
+Here's the code from the previous Activity:
+
+proc sql;
+select *
+    from sq.salesemail
+intersect corr
+select *
+    from sq.salesphone;
+quit;
+You can use an INNER JOIN to produce identical results. This example uses an inner join to find all matches of the two tables. The DISTINCT keyword removes any duplicate rows, resulting in the same result as the INTERSECT set operator.
+
+proc sql;
+select distinct e.CustomerID
+    from sq.salesemail as e inner join
+         sq.salesphone as p
+    on e.CustomerID = p.CustomerID;
+quit;

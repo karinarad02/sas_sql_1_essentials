@@ -1,0 +1,17 @@
+As you saw in the demo, the OUTER UNION set operator is similar to the DATA step with multiple tables listed in the SET statement, and they can produce similar results. Using either method allows you to use the flexibility of SAS programming or SQL. Use the method that works best for you.
+
+proc sql;
+create table response1 as
+select CustomerID, EmailResp as Resp
+    from sq.salesemail
+outer union corr
+select CustomerID, SalesRep, 
+       PhoneResp as Resp
+    from sq.salesphone;
+quit;
+
+data response2;
+    length Resp $12;
+    set sq.salesemail(rename=(EmailResp=Resp)) 
+        sq.salesphone(rename=(PhoneResp=Resp));
+run;

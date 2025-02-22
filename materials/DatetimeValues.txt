@@ -1,0 +1,12 @@
+You can also use date, time, and datetime values in your WHERE expressions.
+
+In SAS, a date value is stored as an integer that represents the number of days since January 1, 1960. To specify a date constant you surround the date in the DATE9 format with single or double quotes followed by a d. A date constant is internally converted to its corresponding SAS date value equivalent.
+
+where DOB < "01JAN2000"d
+A time value is the number of seconds since midnight. To specify a time constant, surround the time in single or double quotes followed by the letter t for time. For example, SAS reads '14:45:32't as 53132, which is 2:45:32PM. Seconds are optional for time values.
+
+where Time >= "14:45:32"t
+A datetime value is the number of seconds since midnight on January 1, 1960. To specify datetime constants, write the date and time in single quotes followed by the letters dt for datetime. Write the date part using the same syntax as for date constants. Follow the date part with the hours, minutes, and seconds, separating the parts with colons.
+
+where DateTime <= "01JAN2000 12:00:00"dt
+SAS offers many functions that extract information from date, time or datetime values, perform interval calculations, or shift values based on a specified interval. You can visit the SAS documentation for more information.

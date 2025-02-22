@@ -1,0 +1,7 @@
+Other statements that you can use to maintain a table are the ALTER TABLE, UPDATE and DELETE statements.
+
+Statement	Description
+ALTER TABLE	Adds columns to, drops columns from, and changes column attributes in an existing table
+UPDATE		Modifies a column's values in existing rows of a table or view
+DELETE		Removes one or more rows from a table or view that is specified in the FROM clause
+To alter, update, or delete a database table, you need to have the authority/access to do so.

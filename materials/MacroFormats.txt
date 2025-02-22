@@ -1,0 +1,12 @@
+Strings larger than 6 characters will be truncated when using the QUOTE format. To ensure values are not truncated, you should specify a width as long as the longest value +2. Be sure to check the SAS documentation when using formats.
+
+FORMAT=$QUOTEw.
+
+proc sql noprint;
+select Name format=$quote4.
+    into :StateList SEPARATED BY ","
+    from sq.statepopulation
+    where Division = '3';
+quit;
+
+%put &=StateList;

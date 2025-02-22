@@ -1,0 +1,11 @@
+Results from an SQL pass-through query are not saved. To use the results in subsequent procedures or DATA steps, a SAS table or view has to be created. To do that, you use the CREATE TABLE or CREATE VIEW statement from the resulting query. Note: You must have Oracle and SAS/ACCESS to Oracle to run the following code.
+
+proc sql;
+connect to oracle(user=sas_user pw=sastest
+                  path=localhost);
+create table work.totalcustomer as
+select UserID, Income format=dollar16., State
+    from connection to oracle
+    ...query...
+Be aware that the CREATE VIEW statement stores the pass-through query, but does not check the validity of the query. It's important to execute the view after it has been created.
+

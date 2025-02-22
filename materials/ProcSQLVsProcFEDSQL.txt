@@ -1,0 +1,9 @@
+The following table highlights some of the main differences between PROC SQL and PROC FEDSQL.
+
+PROC SQL	PROC FEDSQL
+SAS SQL implementation	Vendor neutral ANSI SQL
+Follows ANSI Standard 2	ANSI Standard 3 compliant
+Limited to SAS data types	Processes 17 ANSI data types
+Is multi-threaded for sorting and indexing on the SAS Platform	Is fully multi-threaded on the SAS Platform
+Includes many non-ANSI standard SAS enhancements	Includes very few non-ANSI SAS enhancements
+Does not execute in CAS	Executes in CAS
